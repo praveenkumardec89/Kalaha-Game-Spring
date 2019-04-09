@@ -142,6 +142,15 @@ public class GameService {
     }
 
     public boolean isGameOver(Game game) {
+        int p0_score = game.getPlayer_0_pit_count();
+        int p1_score = game.getPlayer_1_pit_count();
+        if (p0_score > 36){
+            game.setWonBy("Player_0");
+            game.setOver(true);
+        }else if (p1_score > 36){
+            game.setWonBy("Player_1");
+            game.setOver(true);
+        }
         int[] p0 = game.getState()[0];
         int[] p1 = game.getState()[1];
         int p0_count=0;
