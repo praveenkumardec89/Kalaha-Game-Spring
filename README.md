@@ -50,6 +50,14 @@ goto http://localhost:8090/start - POST for starting a game
     http://localhost:8090/{gameID} -GET to see the game
     http://localhost:8090/{gameID} - DELETE to delete the game.
 
+Api Response will have the complete game status:
+{"id":1,"state":[[0,6,6,6,6,6],
+                [7,7,7,7,7,6]],
+                "player_0_pit_count":1,
+                "player_1_pit_count":0,
+                "nextMove":1,
+                "wonBy":"",
+                "over":false}
 ## Deployment
 On the root directory of the project run below command
 mvn spring-boot:run
