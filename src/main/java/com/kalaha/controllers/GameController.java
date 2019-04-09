@@ -65,9 +65,9 @@ public class GameController {
      @PutMapping(value = "/{gameId}/{index}")
     public Game makeAMove(@PathVariable String gameId, @PathVariable String index) {
         Game game =  gameRepository.findOne(Long.valueOf(gameId));
-        if (game != null && gameService.isValidMove(game, gameId, index)){
+        if (game != null && gameService.isValidMove(game,  index)){
             logger.info("Making a move for the player {} from index {}.", index.charAt(0), index);
-            gameService.makeAmove(game, gameId,index);
+            gameService.makeAmove(game, index);
             if (gameService.isGameOver(game)){
                 gameRepository.save(game);
                 return game;

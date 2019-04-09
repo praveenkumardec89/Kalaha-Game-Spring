@@ -22,7 +22,7 @@ public class GameService {
         this.gameRepository = gameRepository;
     }
 
-    public boolean isValidMove(Game game, String gameId, String index){
+    public boolean isValidMove(Game game, String index){
         int row = getInt(index.charAt(0));
         int col = getInt(index.charAt(1));
       return  !game.getIsOver() && isValidIndex(row, col) && game.getState()[row][col] != 0 && game.getNextMove() == (index.charAt(0) - '0');
@@ -36,7 +36,7 @@ public class GameService {
         return (0<= row && row <= 1) && (0<= col && col<=5);
     }
 
-    public void makeAmove(Game game, String gameId, String index) {
+    public void makeAmove(Game game,  String index) {
         int[][] grid = game.getState();
         int r = getInt(index.charAt(0));
         int c = getInt(index.charAt(1));
