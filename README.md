@@ -42,13 +42,12 @@ game always starts with player_0 who owns row -0
     - the next turn will be player_1
     - this repeats for both players till either side has zero stones in pits.
 
-once you run the spring boot application by default it comoes up on 8090
-So 
-goto http://localhost:8090/start - POST for starting a game
-    -- this will give the game id in the location
-    http://localhost:8090/{gameID}/{index}- PUT to make the move
-    http://localhost:8090/{gameID} -GET to see the game
-    http://localhost:8090/{gameID} - DELETE to delete the game.
+once you run the spring boot application by default it comoes up on 8090</br>
+So goto http://localhost:8090/start - POST for starting a game
+    -- this will give the game id in the location header </br>
+    http://localhost:8090/{gameID}/{index}- PUT to make the move </br>
+    http://localhost:8090/{gameID} -GET to see the game </br>
+    http://localhost:8090/{gameID} - DELETE to delete the game. </br>
 
 Api Response will have the complete game status:
 {"id":1,"state":[[0,6,6,6,6,6],
